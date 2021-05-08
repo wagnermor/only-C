@@ -30,7 +30,7 @@ int main() {
     if(attempt < 0) {
       printf("VOCÊ NÃO PODE DIGITAR NÚMEROS NEGATIVOS!\n");
       i--;
-      continue;
+      continue; //pauses the code flow and skips to the nest for loop interaction
     }
 
     int acertou = (attempt == secretNumber);
