@@ -2,15 +2,13 @@
 #include <stdlib.h> //to use the rand and srand functions
 #include <time.h> //to use the time function
 
-#define NUMBER_OF_ATTEMPTS 5 //The directive / constant in C is declared in uppercase and separated by underline.
-
 //command to compile the code in the linux terminal: "gcc nomeProgrma.c -o nomePrograma.out"
 
 //to run the compiled program, just type the address of the complete compiled file: ./nameProgram.out
 
 int main() {
   // imprime cabecalho do nosso jogo
-  printf("********************************************\n");
+  printf("\n********************************************\n");
   printf("***** Bem vindo ao jogo da adivinhação *****\n");
   printf("********************************************\n");
 
@@ -20,28 +18,31 @@ int main() {
   int division = secretNumber / 2;
   printf("                                  ~(%d + %d)", division, division);
   int attempt;
-
-  for(int i = 1; i <= NUMBER_OF_ATTEMPTS; i++) {
-    printf("\nTentativa %d de %d\n", i, NUMBER_OF_ATTEMPTS);
+  //int win = 0; only for "while(win == 0)" with "win = 1" to close te loop
+  int attemptNumber = 0;
+  while(1) { // while(1) is infinity loop
+    attemptNumber++;
+    printf("\nTentativa nº %d. \n", attemptNumber);
     printf("Qual é o seu chute? ");
     scanf("%d", &attempt);
     printf("Seu chute foi %d\n", attempt);
 
     if(attempt < 0) {
       printf("VOCÊ NÃO PODE DIGITAR NÚMEROS NEGATIVOS!\n");
-      i--;
-      continue; //pauses the code flow and skips to the nest for loop interaction
+      attemptNumber--;
+      continue; //pauses the code flow and skips to next loop interaction
     }
 
     int acertou = (attempt == secretNumber);
     int attemptBiggerThanSecretNumber = (attempt > secretNumber);
 
     if(acertou) {
-      printf("\nVOCÊ ACERTOU, PARABÉNS!\n");
+      printf("\nVOCÊ ACERTOU NA %dº TENTATIVA, PARABÉNS!\n", attemptNumber);
       printf("\nWe are the champions, my friends");
       printf("\nAnd we'll keep on fighting till the end...");
       printf("\n                      (Queen Music Limited)");
-      break;
+      break; //The break has the same function, but to justify the existence of the win variable, let's negate the while condition to end the loop
+      //win = 1;
     } 
     else if(attemptBiggerThanSecretNumber) {
       printf("Seu chute foi maior que o número secreto\n");
@@ -49,10 +50,8 @@ int main() {
     else {
       printf("Seu chute foi menor que o número secreto\n");
     }
-    if(i == NUMBER_OF_ATTEMPTS) {
-      printf("\nVOCÊ ERROU AS %d TENTATIVAS\n", NUMBER_OF_ATTEMPTS);
-      printf("O número secreto é: %d\n", secretNumber);
-    }
+    printf("\n\nencerrou o loop mas run all lines\n");
   }
   printf("\nFIM DO JOGO!\n");
+  printf("          %dx\n", attemptNumber);
 }
