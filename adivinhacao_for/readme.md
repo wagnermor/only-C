@@ -1,1 +1,1 @@
-# Code development with "for"
+# Code development with loop "for"
