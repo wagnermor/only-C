@@ -15,12 +15,12 @@ int main() {
   srand(time(NULL)); //For the rand function not to be repeated, it is necessary to use the srand functions (time (NULL))
 
   int secretNumber = rand() % 100; //randomic function
-  int division = secretNumber / 2;
-  printf("                                  ~(%d + %d)", division, division);
+  double division = secretNumber / (double)2;
+  printf("                                  ~(%.2f + %.2f)", division, division);
   int attempt;
   //int win = 0; only for "while(win == 0)" with "win = 1" to close te loop
   int attemptNumber = 0;
-  int points = 1000;
+  double points = 1000;
 
   while(1) { // while(1) is infinity loop
     attemptNumber++;
@@ -52,16 +52,18 @@ int main() {
     else {
       printf("Seu chute foi menor que o número secreto\n");
     }
-    int lostPoints = (attempt - secretNumber) / 2;
+    double lostPoints = abs(attempt - secretNumber) / (double)2;
     
-    if(lostPoints < 0) {
+    /*if(lostPoints < 0) {
       lostPoints = lostPoints * -1;
     }
+    *** the abs function transform a negative number to positive number
+    */
 
     points = points - lostPoints;
 
   }
   printf("\nFIM DO JOGO!\n");
   printf("Você acertou em %d tentativas.\n", attemptNumber);
-  printf("Total de pontos: %d\n", points);
+  printf("Total de pontos: %.2f\n", points);
 }
