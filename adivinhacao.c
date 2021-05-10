@@ -7,63 +7,137 @@
 //to run the compiled program, just type the address of the complete compiled file: ./nameProgram.out
 
 int main() {
+  srand(time(NULL)); //For the rand function not to be repeated, it is necessary to use the srand functions (time (NULL))
+  int secretNumber = rand() % 100; //randomic function
+
   // imprime cabecalho do nosso jogo
   printf("\n********************************************\n");
   printf("***** Bem vindo ao jogo da adivinhação *****\n");
   printf("********************************************\n");
+  printf("                                                  !_\n");
+  printf("                                                  |*~=-.,\n");
+  printf("                                                  |_,-'`\n");
+  printf("                                                  |\n");
+  printf("                                                  |\n");
+  printf("                                                 /^\\\n");
+  printf("                   !_                           / %d\\\n",secretNumber);
+  printf("                   |*`~-.,                     /,    \\ \n");
+  printf("                   |.-~^`                     /#\"     \\\n");
+  printf("                   |                        _/##_   _  \\_\n");
+  printf("              _   _|  _   _   _            [ ]_[ ]_[ ]_[ ]\n");
+  printf("             [ ]_[ ]_[ ]_[ ]_[ ]            |_=_-=_ - =_|\n");
+  printf("           !_ |_=_ =-_-_  = =_|           !_ |=_= -    |\n");
+  printf("           |*`--,_- _        |            |*`~-.,= []  |\n");
+  printf("           |.-'|=     []     |   !_       |_.-\"`_-     |\n");
+  printf("           |   |_=- -        |   |*`~-.,  |  |=_-      |\n");
+  printf("          /^\\  |=_= -        |   |_,-~`  /^\\ |_ - =[]  |\n");
+  printf("      _  /   \\_|_=- _   _   _|  _|  _   /   \\|=_-      |\n");
+  printf("     [ ]/,    \\[ ]_[ ]_[ ]_[ ]_[ ]_[ ]_/,    \\[ ]=-    |\n");
+  printf("      |/#\"     \\_=-___=__=__- =-_ -=_ /#\"     \\| _ []  |\n");
+  printf("     _/##_   _  \\_-_ =  _____       _/##_   _  \\_ -    |\\\n");
+  printf("    [ ]_[ ]_[ ]_[ ]=_0~{_   _}~0   [ ]_[ ]_[ ]_[ ]=-   | \\\n"); 
+  printf("    |_=__-_=-_  =_|-=_ |  ,  |     |_=-___-_ =-__|_    |  \\\n");
+  printf("     | _- =-     |-_   | ((* |      |= _=       | -    |___\\\n");
+  printf("     |= -_=      |=  _ |  `  |      |_-=_       |=_    |/+\\|\n");
+  printf("     | =_  -     |_ = _ `-.-`       | =_ = =    |=_-   ||+||\n");
+  printf("     |-_=- _     |=_   =            |=_= -_     |  =   ||+||\n");
+  printf("     |=_- /+\\    | -=               |_=- /+\\    |=_    |^^^|\n");
+  printf("     |=_ |+|+|   |= -  -_,--,_      |_= |+|+|   |  -_  |=  |\n");
+  printf("     |  -|+|+|   |-_=  / |  | \\     |=_ |+|+|   |-=_   |_-/\n");
+  printf("     |=_=|+|+|   | =_= | |  | |     |_- |+|+|   |_ =   |=/\n");
+  printf("     | _ ^^^^^   |= -  | |  | <>    |=_=^^^^^   |_=-   |/\n");
+  printf("     |=_ =       | =_-_| |  | |     |   =_      | -_   |\n");
+  printf("     |_=-_       |=_=  | |  | |     |=_=        |=-    |\n");
+  printf("^^^^^^^^^^`^`^^`^`^`^^^""""""""^`^^``^^`^^`^^`^`^``^`^``^``^^\n");
 
-  srand(time(NULL)); //For the rand function not to be repeated, it is necessary to use the srand functions (time (NULL))
 
-  int secretNumber = rand() % 100; //randomic function
-  double division = secretNumber / (double)2;
-  printf("                                  ~(%.2f + %.2f)", division, division);
+  //printf("\n%d\n", secretNumber);
+  
   int attempt;
-  //int win = 0; only for "while(win == 0)" with "win = 1" to close te loop
-  int attemptNumber = 0;
+  int attemptLoop = 1;
   double points = 1000;
 
-  while(1) { // while(1) is infinity loop
-    attemptNumber++;
-    printf("\n>> Tentativa nº %d. \n", attemptNumber);
+  int win = 0;
+  
+  int level;
+  printf("Qual o nível de dificuldade?\n");
+  printf("(1)>> Fácil | (2)>> Médio | (3)>> Difícil");
+  printf("Escolha: ");
+  scanf("%d", &level);
+  
+  int attemptNumber;
+
+  switch(level) {
+    case 1:
+      attemptNumber = 30;
+      break;
+    case 2:
+      attemptNumber = 15;
+      break;
+    case 3:
+      attemptNumber = 5;
+      break;
+    default: 
+      printf("\nESCOLHA INVÁLIDA!\n");
+      attemptNumber = 0;
+      break;
+  }
+  /*if(level == 1) {
+    attemptNumber = 30;
+  } else if(level == 2) {
+    attemptNumber = 15;
+  } else if(level == 3) {
+    attemptNumber = 5;
+  } else {
+    printf("\nESCOLHA INVÁLIDA!\n");
+    attemptNumber = 0;
+  }*/
+
+
+  printf("\n*** Escolha um número entre 0  e 100 ***\n");
+  for(int i = 1; i <= attemptNumber; i++) {
+    printf("\n>> Tentativa nº %d. \n", i);
     printf("Qual é o seu chute? ");
+
     scanf("%d", &attempt);
     printf("Seu chute foi %d\n", attempt);
 
     if(attempt < 0) {
       printf("VOCÊ NÃO PODE DIGITAR NÚMEROS NEGATIVOS!\n");
-      attemptNumber--;
+      i--;
       continue; //pauses the code flow and skips to next loop interaction
     }
 
-    int acertou = (attempt == secretNumber);
+    int win = (attempt == secretNumber);
     int attemptBiggerThanSecretNumber = (attempt > secretNumber);
 
-    if(acertou) {
-      printf("\nVOCÊ ACERTOU, PARABÉNS!\n");
-      printf("\nWe are the champions, my friends");
-      printf("\nAnd we'll keep on fighting till the end...");
-      printf("\n                      (Queen Music Limited)");
-      break; //The break has the same function, but to justify the existence of the win variable, let's negate the while condition to end the loop
-      //win = 1;
-    } 
-    else if(attemptBiggerThanSecretNumber) {
+    if(win) {
+      break;
+    } else if(attemptBiggerThanSecretNumber) {
       printf("Seu chute foi maior que o número secreto\n");
-    }
-    else {
+    } else {
       printf("Seu chute foi menor que o número secreto\n");
     }
     double lostPoints = abs(attempt - secretNumber) / (double)2;
-    
-    /*if(lostPoints < 0) {
-      lostPoints = lostPoints * -1;
-    }
+    /*
     *** the abs function transform a negative number to positive number
     */
 
     points = points - lostPoints;
-
+    printf("\n          Pontuação: %.2f\n", points);
+    attemptLoop++;
   }
-  printf("\nFIM DO JOGO!\n");
-  printf("Você acertou em %d tentativas.\n", attemptNumber);
-  printf("Total de pontos: %.2f\n", points);
+  printf("\n*** FIM DE JOGO! *** ");
+
+  if(attempt == secretNumber) {
+    printf("\n    VOCÊ GANHOU!\n");
+    printf("\nWe are the champions, my friends");
+    printf("\nAnd we'll keep on fighting till the end...");
+    printf("\n                      (Queen Music Limited)\n");
+    printf("\nVocê acertou em %d tentativa(s).\n", attemptLoop);
+    printf("Total de pontos: %.2f pontos.\n\n\n", points);
+  } else {
+    printf("\nVOCÊ PERDEU, TENTE DE NOVO!\n\n\n");
+  }
+      
 }
