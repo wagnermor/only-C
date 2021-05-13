@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://media.giphy.com/media/l2QZWFy8hMxr0PBcY/giphy.gif" "linguagem C">
+  <img src="https://media.giphy.com/media/l2QZWFy8hMxr0PBcY/giphy.gif">
 </p>
 
 <h1 align="center">Linguagem C</h1>
