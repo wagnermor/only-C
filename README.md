@@ -9,6 +9,11 @@ Praticando o desenvolvimento de código utilizando a linguagem C.
 
 Esse repositório tem como referência os cursos da Alura <a href="https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-1" target="_blank">Curso de C I</a>, <a href="https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-2" target="_blank">Curso de C II</a> e <a href="https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-3" target="_blank">Curso de C III</a>.
 
+## Entregas
+* [X] Jogo adivinhação;
+* [ ] Jogo da forca;
+* [ ] Jogo foge foge;
+
 ## Como utilizar
 
 ### Clone o repositório
