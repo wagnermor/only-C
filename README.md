@@ -21,7 +21,7 @@ Esse repositório tem como referência os cursos da Alura <a href="https://www.a
 ```bash
 git@github.com:wagnermor/only-C.git
 ```
-Caso precise de ajuda para clonar o repositório, clique <a href="https://docs.github.com/pt/github/creating-cloning-and-archiving-repositories/cloning-a-repository">aqui</a>
+Caso precise de ajuda para clonar o repositório, clique <a href="https://docs.github.com/pt/github/creating-cloning-and-archiving-repositories/cloning-a-repository" target="_blank">aqui</a>
 
 ### Abra o código
 * No diretório clonado, haverão trê sub diretórios (adivinhacao, jogo-da-forca e foge-foge), escolha um dos três sub-diretórios e abra o arquivo "nome-do-arquivo".c no editor de texto de sua preferência.
@@ -40,7 +40,7 @@ gcc arquivo.c -o arquivo
 ./arquivo
 ```
 ### Para compilar no Windows
-* É mais recomendado utilizar a IDE <a href="https://www.codeblocks.org/">CodeBlocks</a> para edição e compilação do programa, você também pode optar por editar o programa no editor de sua preferência e compilar o programa com <a href="">gcc para windows</a>.
+* É mais recomendado utilizar a IDE <a href="https://www.codeblocks.org/" target="_blank">CodeBlocks</a> para edição e compilação do programa, você também pode optar por editar o programa no editor de sua preferência e compilar o programa com <a href="https://gcc.gnu.org/install/binaries.html" target="_blank">gcc para windows</a>.
 
 * Para compilar o um arquivo o comando é igual ao do Linux e Mac, para acessar o programa, digite o nome sem "./":
 ```bash
