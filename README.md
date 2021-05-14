@@ -7,7 +7,7 @@ Praticando o desenvolvimento de código utilizando a linguagem C.
 
 ## Descrição
 
-Esse repositório tem como referência os cursos da Alura [Curso de C I](https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-1/), [Curso de C II](https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-2/) e [Curso de C III](href="https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-3").
+Esse repositório tem como referência os cursos da Alura [Curso de C I](https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-1/), [Curso de C II](https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-2/) e [Curso de C III](https://www.alura.com.br/curso-online-introducao-a-programacao-com-c-parte-3").
 
 ## Entregas
 
