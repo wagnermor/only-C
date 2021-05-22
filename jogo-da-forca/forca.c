@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-  char palavraSecreta[20];
+  char palavraSecreta[20]
   sprintf(palavraSecreta, "MELANCIA E MAMÃO");
   
   int acertou = 0;
