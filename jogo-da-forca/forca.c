@@ -8,18 +8,23 @@ int main() {
   int acertou = 0;
   int enforcou = 0;
 
+  char chutes[26];
+  int tentativas = 0;
+
   do {
-    printf("Digite uma letra\n");
-    char chute;
-    scanf("%c", &chute);
-
-    for(int i = 0; i < strlen(palavraSecreta); i++) {
-      if(palavraSecreta[i] == chute) {
-        printf("A posição %d tem a letra %c!\n", i, palavraSecreta[i]);
-      }
+    for(int index = 0; index < strlen(palavraSecreta); index++) {
+      
+      printf("_ ");
     }
+    printf("\n");
 
-  }while (!acertou && !enforcou);
+    char chute;
+    scanf(" %c", &chute); //O enter pode ser considerado um caracter, para que isso não ocorra, acrescentamos um espaço antes de "%c".
+
+    chutes[tentativas] = chute;
+    tentativas++;
+
+  } while(!acertou && !enforcou);
   
   //printf("%s\n", palavraSecreta);
 
