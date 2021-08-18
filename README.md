@@ -56,7 +56,7 @@ gcc arquivo.c -o arquivo
 
 * É mais recomendado utilizar a IDE [CodeBlocks](https://www.codeblocks.org/) para edição e compilação do programa, você também pode optar por editar o programa no editor de sua preferência e compilar o programa com [gcc para windows](https://gcc.gnu.org/install/binaries.html).
 
-* Para compilar o um arquivo, o comando é igual ao do Linux e Mac, para acessar o programa digite o nome sem "./":
+* Para compilar o arquivo, o comando é igual ao do Linux e Mac, para acessar o programa digite o nome sem "./":
 
 ```bash
 arquivo
